@@ -25,9 +25,8 @@ export function mapDocumentSnapshot(docSnapshot) {
   };
 }
 
-export async function loadDocs(pid, collectionName) {
-  const projectRef = $firestore.collection('projects').doc(pid);
-  const docsRef = projectRef.collection(collectionName);
+export async function loadDocs(collectionName) {
+  const docsRef = $firestore.collection(collectionName);
 
   const docs = await docsRef.get();
   if (!docs.exists) {
@@ -37,10 +36,8 @@ export async function loadDocs(pid, collectionName) {
   return docs.then(mapQuerySnapshot);
 }
 
-export async function watchDocs(pid, collectionName, callback) {
+export async function watchDocs(collectionName, callback) {
   const docsRef = $firestore
-    .collection('projects')
-    .doc(pid)
     .collection(collectionName);
 
   return docsRef.onSnapshot((querySnapshot) => {
@@ -73,8 +70,6 @@ export async function addDocJor(pid, collectionName, docData, jid) {
 
 export async function removeDoc(pid, collectionName, docId) {
   await $firestore
-    .collection('projects')
-    .doc(pid)
     .collection(collectionName)
     .doc(docId)
     .delete();
@@ -82,14 +77,12 @@ export async function removeDoc(pid, collectionName, docId) {
   console.info('Doc removido:', docId);
 }
 
-export async function updateDoc(pid, collectionName, docId, docData) {
+export async function updateDoc(collectionName, docId, newdata) {
   const documentRef = $firestore
-    .collection('projects')
-    .doc(pid)
     .collection(collectionName)
     .doc(docId);
-
-  await documentRef.update(docData);
+  console.log(documentRef);
+  await documentRef.update({ newdata });
   console.info('Doc atualizado:', collectionName);
 
   return documentRef;

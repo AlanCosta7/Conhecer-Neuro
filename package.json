@@ -1,15 +1,20 @@
 {
   "name": "conhecerneuro",
   "version": "0.0.1",
-  "description": "Projeto de divulgação científica do laboratório de neurobiologia/UERJ",
+  "description": "Projeto de divulgação científica do laboratório de Neurobiologia/UERJ",
   "productName": "Conhecer Neuro App",
   "cordovaId": "br.com.conhecerneuro",
   "capacitorId": "",
   "author": "Alan Costa",
   "private": true,
   "scripts": {
+    "start": "npm run start:prod",
+    "start:prod": "APP_ENV=prod quasar dev",
+    "build": "quasar build --mode pwa",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
+    "serve": "quasar serve dist/pwa-mat",
+    "deploy": "npm run build && firebase deploy --only hosting:jornada-jovem",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
@@ -27,11 +32,11 @@
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
-    "@vue/eslint-config-airbnb": "^4.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-vue": "^5.2.3",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.10.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-vue": "^5.0.0"
+    "eslint-loader": "^2.1.1"
   },
   "engines": {
     "node": ">= 8.9.0",

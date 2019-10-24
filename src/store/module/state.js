@@ -1,7 +1,10 @@
 export default {
   hipoxia: '',
-  introducao: '',
+  intro: '',
   alcool: '',
   malnutricao: '',
-
+  hipoxiaWatcher: '',
+  alcoolWatcher: '',
+  malnutricaoWatcher: '',
+  introWatcher: '',
 };

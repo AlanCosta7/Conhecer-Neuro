@@ -26,7 +26,7 @@ const $storage = firebase.storage();
 // firebase.database.enableLogging(isDev)
 // firebase.firestore.setLogLevel(isDev ? 'debug' : 'silent')
 
-export default ({ Vue, store }) => {
+export default ({ Vue }) => {
   Vue.prototype.$fbApp = $fbApp;
   Vue.prototype.$functions = $functions;
   Vue.prototype.$auth = $auth;
@@ -35,6 +35,7 @@ export default ({ Vue, store }) => {
   // store.commit('setCurrentUser', localUser);
 
   // watch user authentication state
+  /*
   $auth.onAuthStateChanged((user) => {
     if (user) {
       const {
@@ -42,14 +43,15 @@ export default ({ Vue, store }) => {
       } = user;
       const provider = providerData[0].providerId;
       const providerId = providerData && providerData.length > 0 ? provider : user.providerId;
-      store.commit('setCurrentUser', {
+      store.commit('', {
         uid, email, emailVerified, displayName, photoURL, nome: displayName, providerId,
       });
       store.dispatch('loadUserPlan');
     } else {
-      store.commit('setCurrentUser', null);
+      store.commit('', null);
     }
   });
+  */
 };
 
 export {

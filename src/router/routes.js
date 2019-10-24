@@ -11,6 +11,17 @@ const routes = [
       { path: 'nicotina-Alcool', name: 'nicotina-Alcool', component: () => import('pages/temas/Nicotina-Alcool.vue') },
     ],
   },
+  {
+    path: '/admin',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      { path: 'home', component: () => import('pages/Index.vue') },
+      { path: 'hipoxia-isquemia', name: 'hipoxia-isquemia', component: () => import('pages/admin/Hipoxia-isquemia.vue') },
+      { path: 'introducao', name: 'introducao', component: () => import('pages/admin/Introducao.vue') },
+      { path: 'malnutricao', name: 'malnutricao', component: () => import('pages/admin/Malnutricao.vue') },
+      { path: 'nicotina-Alcool', name: 'nicotina-Alcool', component: () => import('pages/admin/Nicotina-Alcool.vue') },
+    ],
+  },
 ];
 
 // Always leave this as last one

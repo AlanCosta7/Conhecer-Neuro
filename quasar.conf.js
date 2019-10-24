@@ -1,6 +1,7 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
+// eslint-disable-next-line func-names
 module.exports = function () {
   return {
     // app boot file (/src/boot)
@@ -49,7 +50,9 @@ module.exports = function () {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'LocalStorage'
+      ]
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
