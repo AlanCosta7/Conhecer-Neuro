@@ -1,0 +1,44 @@
+{
+  "name": "conhecerneuro",
+  "version": "0.0.1",
+  "description": "Projeto de divulgação científica do laboratório de neurobiologia/UERJ",
+  "productName": "Conhecer Neuro App",
+  "cordovaId": "br.com.conhecerneuro",
+  "capacitorId": "",
+  "author": "Alan Costa",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint --ext .js,.vue src --fix",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.18.1",
+    "debounce": "^1.2.0",
+    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.11",
+    "lodash.debounce": "^4.0.8",
+    "firebase": "^7.2.1",
+    "quasar": "^1.0.0",
+    "vue-i18n": "^8.0.0",
+    "vuefire": "^1.4.5",
+    "vuexfire": "^3.0.0-alpha.14"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.0.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}
